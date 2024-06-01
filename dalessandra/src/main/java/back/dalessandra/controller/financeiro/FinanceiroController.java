@@ -3,23 +3,14 @@ package back.dalessandra.controller.financeiro;
 import back.dalessandra.Model.Financeiro;
 import back.dalessandra.Model.Venda;
 import back.dalessandra.service.financeiro.FinanceiroService;
-import back.dalessandra.service.venda.VendaService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 @RestController
@@ -28,23 +19,21 @@ public class FinanceiroController {
     @Autowired
     FinanceiroService financeiroService;
 
-    @Autowired
-    VendaService vendaService;
 
     @GetMapping
     public List<Financeiro> findAll() {
         return financeiroService.findAll();
     }
 
-    @GetMapping("/buscarVendas")
-    public List<Venda> find() {
-        return vendaService.findAll();
-    }
-
-    @GetMapping("/buscarFormaPagto")
-    public List<Venda> findByFormaPagto(String formaPagto) {
-        return vendaService.findByFormaPagto(formaPagto);
-    }
+//    @GetMapping("/buscarVendas")
+//    public List<Venda> find() {
+//        return vendaService.findAll();
+//    }
+//
+//    @GetMapping("/buscarFormaPagto")
+//    public List<Venda> findByFormaPagto(String formaPagto) {
+//        return vendaService.findByFormaPagto(formaPagto);
+//    }
 
 
     @GetMapping("/{dataDespesa}")

@@ -21,9 +21,9 @@ public class ClientesDevedoresController {
         return clienteDevedor.listarClientesDevedor();
     }
     @PutMapping("/updatePagamento/{id}/{metodoPagamento}")
-    public String upadtePagamento(@PathVariable("id") int id, @PathVariable("metodoPagamento") String metodoPagamento){
-        return clienteDevedor.updateStatusDevedor(id, metodoPagamento);
-    }
+//    public String upadtePagamento(@PathVariable("id") int id, @PathVariable("metodoPagamento") String metodoPagamento){
+//        return clienteDevedor.updateStatusDevedor(id, metodoPagamento);
+//    }
     @GetMapping("/obetrProdutosDevidos/{codVenda}")
     public List<ListaComprasClienteDevedorDTO>obetrProdutosDevido(@PathVariable("codVenda") int codVenda){
         return  clienteDevedor.listarComprasClienteDevedor(codVenda);
